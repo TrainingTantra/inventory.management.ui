@@ -5,7 +5,7 @@ import FormExtra from "./FormExtra";
 import Input from "./Input";
 
 import AuthContext from "../context/AuthProvider";
-import axios from "../api/axios";
+import {request} from "../api/axios-utils";
 const LOGIN_URL = "/users";
 
 const fields = loginFields;
@@ -28,14 +28,7 @@ export default function Login() {
     setEmail(e.target["email"].value);
     setPassword(e.target["password"].value);
     try {
-      const response = await axios.post(
-        LOGIN_URL,
-        JSON.stringify({ email, password }),
-        {
-          headers: { "Content-Type": "application/json" },
-          withCredentials: true,
-        }
-      );
+      const response = await request({url:LOGIN_URL,method:'POST',data: JSON.stringify({ email, password }), headers: { "Content-Type": "application/json" }})
       console.log("API Reposne:", JSON.stringify(response?.data));
     } catch (err) {}
   };

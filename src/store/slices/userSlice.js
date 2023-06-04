@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { request } from "../../api/axios-utils";
 
 export const initialState = {
   loading: false,
@@ -8,9 +8,7 @@ export const initialState = {
 };
 
 export const fetchusers = createAsyncThunk("user/fetchUsers", () => {
-  return axios
-    .get("https://jsonplaceholder.typicode.com/users")
-    .then((response) => response.data);
+  return request({url:"/todos",method:"GET"}).then(response=> response?.data);
 });
 
 const userSlice = createSlice({
