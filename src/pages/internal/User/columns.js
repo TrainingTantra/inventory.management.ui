@@ -1,23 +1,25 @@
-
+import StatusPill from "../../../utils/TableUtils/StatusPill";
+//import AvatarCell from "../../../utils/TableUtils/AvatarCell";
 export const COLUMNS = [
-    {
-        Header: 'ID',
-        accessor: 'id'
+  {
+    Header: "ID",
+    accessor: "id",
+  },
+  {
+    Header: "Name",
+    accessor: "name",
+    imgAccessor: "avatar",
+    //Cell: AvatarCell,
+  },
+  {
+    Header: "Email",
+    accessor: "email",
+  },
+  {
+    Header: "User Name",
+    accessor: "username",
+    Cell: (value) => {
+      return <StatusPill value={value === 1 ? "Yes" : "No"} />;
     },
-    {
-        Header: 'UserId',
-        accessor: 'userId',
-        hidden:true
-    },
-    {
-        Header: "Title",
-        accessor: "title",
-    },
-    {
-        Header: "Completed",
-        accessor: "completed",
-        Cell:({value})=>{
-            return value?'Yes':'No'
-        }
-    }
-]
+  },
+];
