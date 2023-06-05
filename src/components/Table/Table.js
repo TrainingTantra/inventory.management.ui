@@ -218,39 +218,37 @@ const Table = (props) => {
                 </select>
               )}
             </div>
-            <div>
-              <nav
-                className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
-                aria-label="Pagination"
+            <div
+              className="relative z-0 rounded-md shadow-sm -space-x-px"
+              aria-label="Pagination"
+            >
+              <PageButton
+                className="rounded-l-md"
+                onClick={() => gotoPage(0)}
+                disabled={!canPreviousPage}
               >
-                <PageButton
-                  className="rounded-l-md"
-                  onClick={() => gotoPage(0)}
-                  disabled={!canPreviousPage}
-                >
-                  <span className="sr-only">First</span>
-                  <BiChevronsLeft className="h-5 w-5" aria-hidden="true" />
-                </PageButton>
-                <PageButton
-                  onClick={() => previousPage()}
-                  disabled={!canPreviousPage}
-                >
-                  <span className="sr-only">Previous</span>
-                  <BiChevronLeft className="h-5 w-5" aria-hidden="true" />
-                </PageButton>
-                <PageButton onClick={() => nextPage()} disabled={!canNextPage}>
-                  <span className="sr-only">Next</span>
-                  <BiChevronRight className="h-5 w-5" aria-hidden="true" />
-                </PageButton>
-                <PageButton
-                  className="rounded-r-md"
-                  onClick={() => gotoPage(pageCount - 1)}
-                  disabled={!canNextPage}
-                >
-                  <span className="sr-only">Last</span>
-                  <BiChevronsRight className="h-5 w-5" aria-hidden="true" />
-                </PageButton>
-              </nav>
+                <span className="sr-only">First</span>
+                <BiChevronsLeft className="h-5 w-5" aria-hidden="true" />
+              </PageButton>
+              <PageButton
+                onClick={() => previousPage()}
+                disabled={!canPreviousPage}
+              >
+                <span className="sr-only">Previous</span>
+                <BiChevronLeft className="h-5 w-5" aria-hidden="true" />
+              </PageButton>
+              <PageButton onClick={() => nextPage()} disabled={!canNextPage}>
+                <span className="sr-only">Next</span>
+                <BiChevronRight className="h-5 w-5" aria-hidden="true" />
+              </PageButton>
+              <PageButton
+                className="rounded-r-md"
+                onClick={() => gotoPage(pageCount - 1)}
+                disabled={!canNextPage}
+              >
+                <span className="sr-only">Last</span>
+                <BiChevronsRight className="h-5 w-5" aria-hidden="true" />
+              </PageButton>
             </div>
           </div>
         </div>

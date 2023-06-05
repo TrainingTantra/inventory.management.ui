@@ -64,4 +64,57 @@ const signupFields = [
   },
 ];
 
-export { loginFields, signupFields };
+const userCreationFields = [
+  {
+    labelText: "Username",
+    labelFor: "username",
+    id: "username",
+    name: "username",
+    type: "text",
+    autoComplete: "username",
+    isRequired: true,
+    placeholder: "Username",
+  },
+  {
+    labelText: "Firstname",
+    labelFor: "firstname",
+    id: "firstname",
+    name: "firstname",
+    type: "text",
+    autoComplete: "firstname",
+    isRequired: true,
+    placeholder: "Firstname",
+  },
+  {
+    labelText: "Lastname",
+    labelFor: "lastname",
+    id: "lastname",
+    name: "lastname",
+    type: "text",
+    autoComplete: "lastname",
+    isRequired: true,
+    placeholder: "Lastname",
+  },
+  {
+    labelText: "Email",
+    labelFor: "email",
+    id: "email",
+    name: "email",
+    type: "text",
+    autoComplete: "email",
+    isRequired: true,
+    placeholder: "Email",
+  },
+  {
+    labelText: "Mobile",
+    labelFor: "mobile",
+    id: "mobile",
+    name: "mobile",
+    type: "text",
+    autoComplete: "mobile",
+    isRequired: true,
+    placeholder: "Mobile",
+  },
+];
+
+export { loginFields, signupFields, userCreationFields };
